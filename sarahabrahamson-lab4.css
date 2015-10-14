@@ -1,0 +1,90 @@
+/*
+Puts a border around the playlist.
+Left and right margins are set to auto so the
+   playlist stays centered in the page.
+Text is aligned to the center so the columns
+   are centered.
+There is a fixed width so the playlist doesn't
+   collapse when the window size is reduced.
+*/
+#playlist{
+	list-style-type: none;
+	border-style: solid;
+	border-width:7px;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1100px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 0px;
+	text-align: center;
+	background-color: #FFFFCC;
+}
+
+/*
+ There are no line wraps so the playlist doesn't
+   collapse when the window size is reduced.
+ Padding is 0 to offset the indent from being 
+   wrapped in an unordered list.
+*/
+ul#song{
+	padding: 0;
+	white-space: nowrap;
+}
+
+/*
+Vertically aligned to the middle of the line so the
+   rows line up.
+The width is set to 130px because the largest margin
+   from the data is 129px.
+*/
+ul#song li {
+	display: inline-block;
+	vertical-align: middle;
+	width: 130px;
+}
+
+body{
+	background-color: #FF9999;
+}
+
+.Heading li{
+	font-weight:bold;
+	text-decoration: underline;
+	padding-bottom: 10px;
+	font-size: 1.2rem;
+}
+
+.title {
+	font-variant:small-caps;
+}
+
+.artist {
+	font-weight:bold;
+
+}
+
+li#favorite{
+	color: green;
+}
+
+.album {
+	font-style:italic;
+
+}
+
+.date {
+	font-size:.8rem;
+
+}
+
+.genre {
+	font-size:.8rem; 
+}
+
+#last {
+	font-size: .5rem;
+	font-style: italic;
+	padding-top: 10px;
+}

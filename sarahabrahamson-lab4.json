@@ -1,0 +1,43 @@
+{
+	"playlist" :
+		{ 
+			"tracks" : [
+			{
+				"title" : "Wildest Dreams",
+				"artist" : "Taylor Swift",
+				"album" : "1989",
+				"date" : "2014",
+				"genre" : "Pop",
+				"website" : "http://taylorswift.com",
+				"cover" : "http://images.christianpost.com/full/76728/1989.png"
+			},
+			{
+				"title" : "Same Old Love",
+				"artist" : "Selena Gomez",
+				"album" : "Revival",
+				"date" : "2015",
+				"genre" : "Pop",
+				"website" : "http://selenagomez.com",
+				"cover" : "https://d3rt1990lpmkn.cloudfront.net/640/f4f5e7ff5ffa32e69030691f77c2aec76f7b0105"
+			},
+			{
+				"title" : "All Star",
+				"artist" : "Smash Mouth",
+				"album" : "Astro Lounge",
+				"date" : "1999",
+				"genre" : "Rock",
+				"website" : "http://smashmouth.com",
+				"cover" : "https://upload.wikimedia.org/wikipedia/en/thumb/1/16/All_star.jpg/220px-All_star.jpg"
+			},
+			{
+				"title" : "The Middle",
+				"artist" : "Jimmy Eat World",
+				"album" : "Bleed American",
+				"date" : "2001",
+				"genre" : "Alternative Rock",
+				"website" : "http://jimmyeatworld.com",
+				"cover" : "https://upload.wikimedia.org/wikipedia/en/thumb/2/26/Themiddlejew.jpg/220px-Themiddlejew.jpg"
+			} ]
+		}
+	
+}

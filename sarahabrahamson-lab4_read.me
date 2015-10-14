@@ -1,0 +1,32 @@
+Sarah Abrahamson
+Lab 4 Readme
+
+Part 1: sarahabrahamson-lab4.json
+	I organized my JSON by having an overall "playlist" key, followed by an array of "tracks". In every track there are title, artist, album, date, genre, website, and cover keys with their associated values.
+
+Part 2: sarahabrahamson-lab4.html sarahabrahamson-lab4.css
+	I used the same CSS file as from Lab 2, but I made some of the class names lowercase and renamed the file.
+	In my HTML file, I removed all of the unordered lists which represented every track, but kept the outer ul which has an id of 'playlist'.
+	
+	For building the html, I created an array called 'songs'. 
+	  First, I pushed the ul which contains the headings for the columns to 'songs'.
+	  Then, I called .getJSON to get my JSON file.
+	  I had to make 4 nested calls to the .each method to extract my data from JSON.
+	  	The first call retrieved the 'playlist: tracks' data.
+	  	The second gets the array from 'tracks'.
+	  	The third gets the array position and the "key:value" pairs.
+	  	The fourth goes into the pairs to get the separate 'key' and 'value' data.
+	  In the third .each call:
+	    I push a new entry to the array 'songs' that contains the opening tag for an ul with the id='song'.
+	    Then, I call the last .each method where I:
+	   	  Add a list item with the class name being the same as the key. The value would go between the <li></li> tags, except for image and website. 
+	   	  For image I put the value in the src attribute for <img>. 
+	   	  For website it's in the href attribute for <a> and also a substring starting at position 7 (to get rid of the http://) is between the open and close tags.
+	   	  For my favorite song, I add the id 'favorite' to ensure it will be found in the css.
+	   	  For the genres, I added the value between the open and close tags with "&bull;" to add a bullet before it.
+	   	Then, I add a close tag for the ul and increase the index value.
+	  By using a for loop, I appended all of the items in 'songs' to the end of the ul#playlist. After the loop, I append the "End of list" list item.
+	Then, I removed the img#coverart tag.
+	Finally, I added the stylesheet to link#stylepage using .attr() to change the href to my css file.
+
+	I kept the script tags in the html doc instead of an outside file because it's specific to this html page.

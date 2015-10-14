@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html>
+	<title> Favorite Playlist </title>
+	<head>
+		<link id="stylepage" rel="stylesheet" href="">
+	</head>
+	<body>
+		<img id="coverart" src="noalbum.png">
+		<ul id="playlist">			
+		</ul>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("img#coverart").click(function() {
+          var i = 1;   <!-- Variable to keep track of array index. Starts at 1 because other songs are pushed-->
+          var songs = [];
+          songs.push("<ul id='song' class='Heading'><li>Song</li><li>Artist</li><li>Album</li><li>Release Date</li><li>Genre</li><li>Website</li><li>Cover</li></ul>");
+          $.getJSON('sarahabrahamson-lab4.json', function(data) {
+            $.each(data, function(playlist, tracks) {
+            	$.each(tracks, function() {
+            		$.each(this, function(key, pair) {
+            			songs.push("<ul id='song'>");
+            			$.each(pair, function(fir, sec) {
+            				if(fir == "cover"){
+            					songs[i] += "<li class='" + fir + "'>" + "<img src='" + sec + "' style='width:130px;height:130px;'>" + "</li>";
+            				} else if (fir == "website") {
+            					songs[i] += "<li class='" + fir + "'>" +"<a href='"+ sec + "'>" + sec.substring(7) + "</a>"+ "</li>";
+            				} else if (fir == "genre"){
+            					songs[i] += "<li class='" + fir + "'>" + "&bull; " + sec + "</li>";
+            				} else if (sec == "All Star") {
+            					songs[i] += "<li class='" + fir + "' id='favorite'>" + sec + "</li>";
+            				} else {
+            					songs[i] += "<li class='" + fir + "'>" + sec + "</li>";
+            				}
+            			});
+            			songs[i] += "</ul>";
+            			i++;
+            		});
+				});
+            });
+            for(var x = 0; x < songs.length; x++){
+            	$("ul#playlist").append(songs[x]);
+            }
+            $("ul#playlist").append("<li id='last'>End of list</li>");
+          });
+		  document.getElementById("coverart").parentNode.removeChild(document.getElementById("coverart"));
+		  $("#stylepage").attr("href", "sarahabrahamson-lab4.css");
+        });
+      });
+    </script>
+	</body>
+</html>
